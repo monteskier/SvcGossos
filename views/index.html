@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" />
+    <link rel='stylesheet' href='stylesheets/style.css' />
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/ui-bootstrap.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="javascripts/main.js"></script>
+  </head>
+  <body ng-app="Gossos">
+    <div ng-controller="MainController" ng-init="initApp()">
+      <h1>TINENÇA I CONDUCCIÓ DE GOSSOS POTENCIALMENT PERILLOSOS</h1>
+      <div ng-controller="SeleccioController">
+        <button class="btn btn-primary" ng-click="carregar('Llista')">Llista</button>
+        <button class="btn btn-primary" ng-click="carregar('nou')">Nou Registre</button>
+      </div>
+
+      <ng-view></ng-view>
+    </div>
+  </body>
+
+  <!-- Controllers -->
+  <script src="javascripts/controllers/seleccioController.js"></script>
+  <script src="javascripts/controllers/nouController.js"></script>
+  <!--<script src="/javascripts/controllers/llistaController.js"></script>-->
+
+
+</html>
