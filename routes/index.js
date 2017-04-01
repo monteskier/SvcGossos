@@ -5,5 +5,18 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+router.post('/nou', function(req, res, next){
+  res.send("Yeha");
+  var db = req.db;
+  var collection = db.gossos;
+  var gos = req.body;
+  console.log(gos);
+  collection.insert({"censGos":gos},function(err,doc){
+    if(err){
+      res.json({"msg":"erron en dessar"});
+    }
+    res.json({"msg":"dessat correctament"});
+  })
+});
 
 module.exports = router;

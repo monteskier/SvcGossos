@@ -1,5 +1,9 @@
 angular.module('Gossos')
-  .controller("NouController",['$rootScope','$scope','$location', function($scope, $location){
+  .controller("NouController",['$scope','$location','$http', function($scope, $location, $http){
     'use strict';
-
+    $scope.desar = function(){
+        console.log("Vamonos");
+        $http.post('/nou', $scope.gos).then(function(results){
+        console.log(results.msg);
+    });
   }]);

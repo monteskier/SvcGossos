@@ -12,17 +12,17 @@ angularApp.controller('MainController', function($scope, $location){
   $locationProvider.html5Mode('true');
 
   $routeProvider.when('/seleccio',{
-    templateUrl:"/views/seleccio.html",
+    templateUrl:"/templates/seleccio.html",
     controller:"SeleccioController"
   });
 
   $routeProvider.when('/llista',{
-    templateUrl:"/views/llista.html",
+    templateUrl:"/templates/llista.html",
     controller:"LlistaController"
   });
 
   $routeProvider.when('/nou',{
-    templateUrl:"/views/nou.html",
+    templateUrl:"/templates/nou.html",
     controllers:"NouController"
   });
 }]);
