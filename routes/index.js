@@ -5,8 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-router.post('/nou', function(req, res, next){
-  res.send("Yeha");
+router.post('/nouPost', function(req, res, next){
   var db = req.db;
   var collection = db.gossos;
   var gos = req.body;
