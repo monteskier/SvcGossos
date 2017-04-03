@@ -3,13 +3,13 @@ angular.module('Gossos')
     'use strict';
 
     $scope.desar = function(){
-        console.log("Vamonos");
+
         $http({
         method:"POST",
-        url:"/nouPost",
+        url:"nouPost",
         data:{"gos":$scope.gos}
       }).then(function(results){
-        console.log(results.msg);
+        console.log(results);
     });
   }
 

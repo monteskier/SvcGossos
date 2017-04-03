@@ -7,15 +7,15 @@ router.get('/', function(req, res, next) {
 });
 router.post('/nouPost', function(req, res, next){
   var db = req.db;
-  var collection = db.gossos;
-  var gos = req.body;
+  var collection = db.get("cens");
+  var gos = req.body.gos;
   console.log(gos);
   collection.insert({"censGos":gos},function(err,doc){
     if(err){
-      res.json({"msg":"erron en dessar"});
+      res.send("erron en dessar = " + err);
     }
-    res.json({"msg":"dessat correctament"});
-  })
+     res.send("Dessat Correctament");
+  });
 });
 
 module.exports = router;
