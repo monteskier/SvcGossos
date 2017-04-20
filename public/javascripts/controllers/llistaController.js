@@ -28,7 +28,7 @@ angular.module("Gossos")
         }).then(function(results) {
             $scope.msg = results.msg;
             console.log(results.msg);
-            $location.path("/llista");
+            $scope.obtindreResultats();
         });
     };
 

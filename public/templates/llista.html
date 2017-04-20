@@ -2,7 +2,7 @@
   <h2>Llista de registres</h2>
   <div>
 
-      <table width=600px>
+      <table width=1200px>
         <tr>
           <th>Accio</th>
           <th>titular</th>
@@ -18,14 +18,14 @@
           <th>Data expedició</th>
           <th>Valid Fins</th>
         </tr>
-        <ng-repeat="resultat in resultats"><tr>
-
+        <tr ng-repeat="resultat in resultats">
           <td style="color:blue; cursor:pointer;"><span ng-click="editar(resultat._id)" >Editar</span>
           <span style="color:red; cursor:pointer;" ng-click="eliminar(resultat._id)">Eliminar</span></td>
-            <ng-repeat="param in resultat.censGos"><td>
+            <td ng-repeat="param in resultat.censGos">
               {{param}}
             </td>
         </tr>
+      </div>
     </table>
     <br>
   </div>
