@@ -25,4 +25,9 @@ angularApp.controller('MainController', function($scope, $location){
     templateUrl:"templates/nou.html",
     controllers:"NouController"
   });
+  $routeProvider.when('/editar',{
+    templateUrl:"templates/editar.html",
+    controllers:"EditarController"
+  });
+
 }]);

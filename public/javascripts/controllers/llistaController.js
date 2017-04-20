@@ -1,13 +1,36 @@
 angular.module("Gossos")
-  .controller('llistaController', ["$rootScope","$scope", "$location", function($rootScope, $scope, $location){
+  .controller('LlistaController', ["$rootScope","$scope", "$location", "$http", function($rootScope, $scope, $location, $http){
     'use strict';
-    $scope.showLlista=true;
-    $scope.carrega = function(){
-      $.ajax({
-        method:"post",
-        url:"llista",
+    console.log("controlador");
+
+    $scope.obtindreResultats = function(){
+      $http({
+        method:"GET",
+        url:"llista"
       }).then(function(results){
-        $scope.results = results;
+        console.log(results.data);
+        $scope.resultats = results.data;
       });
     };
+    $scope.editar = function(obj){
+      $rootScope.objId = obj;
+      $location.path("/editar");
+    };
+
+    $scope.eliminar = function(obj) {
+        $rootScope.objId = obj;
+        $http({
+            method: "POST",
+            url: "eliminar",
+            data: {
+                "obj":obj
+            }
+        }).then(function(results) {
+            $scope.msg = results.msg;
+            console.log(results.msg);
+            $location.path("/llista");
+        });
+    };
+
+
   }]);

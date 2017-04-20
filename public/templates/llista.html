@@ -1,6 +1,31 @@
 <div ng-controller="LlistaController" ng-init="obtindreResultats()">
   <h2>Llista de registres</h2>
-  <li ng-repeat="resultat in resultats">
-    <h3>{{resultat.titular}} - {{resultat.nomGos}}</h3>
-  </li>
-</div>
+  <div>
+
+      <table width=600px>
+        <tr>
+          <th>Accio</th>
+          <th>titular</th>
+          <th>NIF</th>
+          <th>Nom del gos</th>
+          <th>Numero de Xip</th>
+          <th>Raça</th>
+          <th>Exp</th>
+          <th>Placa núm</th>
+          <th>Adreça</th>
+          <th>Llicencia núm:</th>
+          <th>Cens</th>
+          <th>Data expedició</th>
+          <th>Valid Fins</th>
+        </tr>
+        <ng-repeat="resultat in resultats"><tr>
+
+          <td style="color:blue; cursor:pointer;"><span ng-click="editar(resultat._id)" >Editar</span>
+          <span style="color:red; cursor:pointer;" ng-click="eliminar(resultat._id)">Eliminar</span></td>
+            <ng-repeat="param in resultat.censGos"><td>
+              {{param}}
+            </td>
+        </tr>
+    </table>
+    <br>
+  </div>
