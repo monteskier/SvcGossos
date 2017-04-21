@@ -1,6 +1,7 @@
 angular.module('Gossos')
-    .controller("EditarController", ['$scope', '$location', '$http', '$rootScope', function($scope, $location, $http, $rootScope) {
+    .controller("EditarController", ['$scope', '$location', '$http', '$rootScope', '$timeout', function($scope, $location, $http, $rootScope, $timeout) {
         var id = $rootScope.objId;
+
         $scope.getObject = function() {
             $http({
                 method: "POST",
@@ -12,5 +13,18 @@ angular.module('Gossos')
                 $scope.gos = results.data.censGos;
                 console.log(results);
             });
+        };
+        $scope.updateObject = function(){
+          $http({
+            method:"POST",
+            url:"update",
+            data:{
+              "obj": id, "gos":$scope.gos
+            }
+          }).then(function(results){
+            $rootScope.msg = results.data.msg;
+            $rootScope.flag = true;
+            $timeout(setTimeout, 3000);
+          });
         };
     }]);

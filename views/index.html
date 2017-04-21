@@ -4,6 +4,7 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="stylesheets/bootstrap.css" />
     <link rel='stylesheet' href='stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" media="print" href="stylesheets/print.css" />
     <script src="lib/angular.min.js"></script>
     <script src="lib/ui-bootstrap.js"></script>
     <script src="lib/angular-route.js"></script>
@@ -16,7 +17,7 @@
         <button class="btn btn-primary" ng-click="carregar('llista')">Llista</button>
         <button class="btn btn-primary" ng-click="carregar('nou')">Nou Registre</button>
       </div>
-
+      <div id="msg" ng-show="flag" class="check-element animate-show-hide">{{msg}}</div>
       <ng-view></ng-view>
     </div>
   </body>

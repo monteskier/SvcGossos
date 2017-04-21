@@ -1,11 +1,14 @@
 var angularApp = angular.module('Gossos', ['ui.bootstrap','ngRoute']);
-angularApp.controller('MainController', function($scope, $location){
+angularApp.controller('MainController', function($scope, $location, $rootScope){
   'use strict';
-  console.log("Ostie");
-  $scope.initApp = function(){
-    //$location.path('/seleccio');
 
+  $scope.initApp = function(){
+    $rootScope.flag = false;
   };
+
+  function setTimeout(){
+    $rootScope.flag = false;
+  }
 
 }).config(['$locationProvider','$routeProvider', function($locationProvider, $routeProvider){
   'use strict';

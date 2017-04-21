@@ -1,15 +1,21 @@
 angular.module('Gossos')
-  .controller("NouController",['$scope','$location','$http', function($scope, $location, $http){
+  .controller("NouController",['$scope','$location','$http','$timeout','$rootScope', function($scope, $location, $http, $timeout, $rootScope){
     'use strict';
+
         $scope.desar = function(){
         $http({
         method:"POST",
         url:"nouPost",
         data:{"gos":$scope.gos}
       }).then(function(results){
-
-        console.log(results.msg);
+        $rootScope.msg = results.data.msg;
+        $rootScope.flag = true;
+        $timeout(setTimeout, 3000);
     });
   };
+
+  function setTimeout(){
+    $rootScope.flag = false;
+  }
 
   }]);

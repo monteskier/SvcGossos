@@ -57,5 +57,18 @@ router.post('/eliminar', function(req, res, next){
 
   });
 });
+router.post("/update", function(req, res, next){
+  var db = req.db;
+  var collection = db.get("cens");
+  var obj = req.param("obj");
+  var gos = req.body.gos;
+  objId = new ObjectID(obj);
+  collection.update({_id: objId},{"censGos":gos}, function(err, doc){
+    if(err){
+      res.json({"msg":"Error a l'hora de actulaitzar el registre"});
+    }
+    res.json({"msg":"S'han actualitzat les dades correctament"});
+  });
+});
 
 module.exports = router;

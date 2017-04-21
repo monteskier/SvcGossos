@@ -1,7 +1,6 @@
 angular.module("Gossos")
-  .controller('LlistaController', ["$rootScope","$scope", "$location", "$http", function($rootScope, $scope, $location, $http){
+  .controller('LlistaController', ["$rootScope","$scope", "$location", "$http", "$timeout", function($rootScope, $scope, $location, $http, $timeout){
     'use strict';
-    console.log("controlador");
 
     $scope.obtindreResultats = function(){
       $http({
@@ -10,6 +9,7 @@ angular.module("Gossos")
       }).then(function(results){
         console.log(results.data);
         $scope.resultats = results.data;
+        $timeout(setTimeout, 3000);
       });
     };
     $scope.editar = function(obj){
@@ -26,11 +26,15 @@ angular.module("Gossos")
                 "obj":obj
             }
         }).then(function(results) {
-            $scope.msg = results.msg;
-            console.log(results.msg);
             $scope.obtindreResultats();
+            $rootScope.msg = results.data.msg;
+            $rootScope.flag = true;
         });
     };
+
+    function setTimeout(){
+     $rootScope.flag = false;
+   }
 
 
   }]);
