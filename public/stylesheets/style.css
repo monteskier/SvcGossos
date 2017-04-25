@@ -8,10 +8,12 @@ a {
 }
 #tarjeta{
   display:flex;
-  font-size: 8px;
-  flex-direction:column;
-  width:325px;
-  height: 210px;
-  border-style: dashed;
-  justify-content:center;
+  font-size: 16px;
+  flex-flow:column;
+  width:650px;
+  height: 420px;
+  border-style: solid;
+  border-width: thin;
+  align-items:center;
+  padding: 10px;
 }

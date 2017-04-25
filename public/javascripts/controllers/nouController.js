@@ -1,7 +1,7 @@
 angular.module('Gossos')
   .controller("NouController",['$scope','$location','$http','$timeout','$rootScope', function($scope, $location, $http, $timeout, $rootScope){
     'use strict';
-
+    $rootScope.printFlag = true;
         $scope.desar = function(){
         $http({
         method:"POST",

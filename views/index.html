@@ -16,9 +16,12 @@
       <div ng-controller="SeleccioController">
         <button class="btn btn-primary" ng-click="carregar('llista')">Llista</button>
         <button class="btn btn-primary" ng-click="carregar('nou')">Nou Registre</button>
+        <button class="btn btn-primary" ng-show="printFlag" ng-click="print('card')">Imprimir</button>
       </div>
       <div id="msg" ng-show="flag" class="check-element animate-show-hide">{{msg}}</div>
-      <ng-view></ng-view>
+      <div id="card">
+        <ng-view></ng-view>
+      </div>
     </div>
   </body>
 

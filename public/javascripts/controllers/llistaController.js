@@ -1,7 +1,7 @@
 angular.module("Gossos")
   .controller('LlistaController', ["$rootScope","$scope", "$location", "$http", "$timeout", function($rootScope, $scope, $location, $http, $timeout){
     'use strict';
-
+    $rootScope.printFlag = false;
     $scope.obtindreResultats = function(){
       $http({
         method:"GET",

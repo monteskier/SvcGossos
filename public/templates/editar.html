@@ -1,19 +1,18 @@
 <div ng-controller="EditarController" ng-init="getObject()">
   <div id="tarjeta">
-    <span class="cap">
-      <img src="/images/svc.svg" width="45px" height="45px" />
-      <p><b>Llicència administrativa per a la tinença i conducció de gessos potencialment perillosos</b></p>
-    </span>
+    <img src="/images/svc.svg" width="45px" height="45px" />
+    <p><b>Llicència administrativa per a la tinença i conducció de gessos potencialment perillosos</b></p>
+
     <form id="alta">
     Titular:<input type="text" name="titular" value="" ng-model="gos.titular" />
     NIF:<input type="text" name="NIF" value="" ng-model="gos.NIF"/><br>
     Nom gos:<input type="text" name="nomGos" value="" ng-model="gos.nom" /> Microxip:<input type="text" name="xip" value="" ng-model="gos.xip" /><br>
-    Raça: <input type="text" name="race" value="" ng-model="gos.race"> Exp:<input type="text" size="10" name="exp" value="" ng-model="gos.exp"> Placa núm:<input type="text" name="numPlaca" size="10" value="" ng-model="gos.numPlaca" />
+    Raça: <input type="text" name="race" value="" ng-model="gos.race"> Exp:<input type="text" size="10" name="exp" value="" ng-model="gos.exp"> Placa núm:<input type="text" name="numPlaca" size="10" value="" ng-model="gos.numPlaca" /><br>
     Adreça:<input type="text" name="adress" value="" ng-model="gos.adress" />
     Llicència núm: <input type="text" name="llicNum" value="" ng-model="gos.llicNum" /><br>
     Registre Cens: <input type="text" name="regCens" value="" ng-model="gos.regCens"/><br>
-    Data expedicio: <input type="text" name="expData" value="" ng-model="gos.expData" />Valid fins:<input type="text" name="valData" value="" ng-model="gos.valData" />
-    <button type="buton" value="Desar" ng-click="updateObject()">Actualitzar</button>
+    Data expedicio: <input type="text" name="expData" value="" ng-model="gos.expData" />Valid fins:<input type="text" name="valData" value="" ng-model="gos.valData" /><br>
+    <button type="button" value="Desar" ng-click="updateObject()">Actualitzar</button>
     </form>
    </div>
 </div>

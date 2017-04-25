@@ -1,9 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
 #tarjeta{
   display:flex;
+  justify-content:space-around;
   font-size: 8px;
   flex-direction:column;
   width:325px;
   height: 210px;
-  border-style: dashed;
-  justify-content:center;
+  align-items:center;
+  border-style: solid;
+  border-width: thin;
+}
+button{
+  display: none;
+}
+title{
+  display: none;
 }

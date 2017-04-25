@@ -8,6 +8,7 @@ angularApp.controller('MainController', function($scope, $location, $rootScope){
 
   function setTimeout(){
     $rootScope.flag = false;
+    $rootScope.printFlag = false;
   }
 
 }).config(['$locationProvider','$routeProvider', function($locationProvider, $routeProvider){

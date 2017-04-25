@@ -11,7 +11,8 @@ angular.module('Gossos')
                 }
             }).then(function(results) {
                 $scope.gos = results.data.censGos;
-                console.log(results);
+                $rootScope.printFlag= true;
+
             });
         };
         $scope.updateObject = function(){
