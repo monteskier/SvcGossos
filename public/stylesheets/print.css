@@ -22,6 +22,10 @@ button{
   display: none;
   visibility: hidden;
 }
+input{
+border: none;
+background-color: #33FFCC;
+}
 head, h1, title, link, meta, style, script {
 	display: none;
 }
