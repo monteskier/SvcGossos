@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var lintReporter = require("express-jslint-reporter");
-
+var session = require("express-session");
 var index = require('./routes/index');
 var users = require('./routes/users');
 var monk = require('monk');
@@ -20,6 +20,10 @@ app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(session({
+  secret: 'censanimals',
+  cookie:{}
+}));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

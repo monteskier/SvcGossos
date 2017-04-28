@@ -15,8 +15,9 @@
     <div ng-controller="MainController" ng-init="initApp()">
       <h1>TINENÇA I CONDUCCIÓ DE GOSSOS POTENCIALMENT PERILLOSOS</h1>
       <div ng-controller="SeleccioController">
-        <button class="btn btn-primary" ng-click="carregar('llista')">Llista</button>
-        <button class="btn btn-primary" ng-click="carregar('nou')">Nou Registre</button>
+        <button class="btn btn-primary" ng-click="carregar('llista')" ng-show="session">Llista</button>
+        <button class="btn btn-primary" ng-click="carregar('nou')" ng-show="session">Nou Registre</button>
+        <button class="btn btn-primary" ng-click="carregar('login')">{{accio}}</button>
         <button class="btn btn-primary" ng-show="printFlag" ng-click="print('card')">Imprimir</button>
       </div>
       <div id="msg" ng-show="flag" class="check-element animate-show-hide">{{msg}}</div>
@@ -31,6 +32,7 @@
   <script src="javascripts/controllers/llistaController.js"></script>
   <script src="javascripts/controllers/nouController.js"></script>
   <script src="javascripts/controllers/EditarController.js"></script>
+  <script src="javascripts/controllers/loginController.js"></script>
   <!--<script src="/javascripts/controllers/llistaController.js"></script>-->
 
 

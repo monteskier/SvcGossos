@@ -4,6 +4,8 @@ angularApp.controller('MainController', function($scope, $location, $rootScope){
 
   $scope.initApp = function(){
     $rootScope.flag = false;
+    $rootScope.session = false;
+    $rootScope.accio = "login";
   };
 
   function setTimeout(){
@@ -32,6 +34,10 @@ angularApp.controller('MainController', function($scope, $location, $rootScope){
   $routeProvider.when('/editar',{
     templateUrl:"templates/editar.html",
     controllers:"EditarController"
+  });
+  $routeProvider.when('/login',{
+    templateUrl:"templates/login.html",
+    controller:"LoginController"
   });
 
 }]);
